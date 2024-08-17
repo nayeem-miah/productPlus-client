@@ -44,7 +44,7 @@ const LogIn = () => {
     return (
         <div>
             <Helmet>
-                <title> FilterShop | LogIn</title>
+                <title> ProductPlus | LogIn</title>
             </Helmet>
             <div className="hero container mx-auto pt-16">
                 <div className="hero-content flex-col lg:flex-row">

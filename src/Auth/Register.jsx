@@ -54,7 +54,7 @@ const Register = () => {
     return (
         <div>
             <Helmet>
-                <title>FilterShop | Register</title>
+                <title>ProductPlus | Register</title>
             </Helmet>
             <div className="hero bg-cover bg-base-200 container mx-auto rounded-t-xl pt-16">
                 <div className="hero-content flex-col lg:flex-row">
