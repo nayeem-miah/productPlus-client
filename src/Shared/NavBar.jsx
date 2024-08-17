@@ -82,7 +82,7 @@ const NavBar = () => {
                                 <button onClick={handleLogOut} className="font-bold border-b-4 border-[#FF3811] p-2 rounded-xl">Log Out</button>
                             </ul>
                         </div> :
-                            <Link to="/login" className="btn btn-sm bg-[#ff1111] font-bold border-none">LogIn</Link>
+                            <Link to="/" className="btn btn-sm bg-[#ff1111] font-bold border-none">LogIn</Link>
                     }
                     <label className="swap swap-rotate">
                         <input onClick={handleToggle} type="checkbox" className="theme-controller" value="synthwave" />
