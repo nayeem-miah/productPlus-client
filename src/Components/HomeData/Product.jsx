@@ -104,9 +104,9 @@ const Product = () => {
         <div className="container mx-auto mt-20">
             <section>
                 <div className='text-center space-y-2 mb-5'>
-                    <h3 className='text-[#127cf5] font-bold'>~~~ Our All Product ~~~</h3>
+                    <h3 className='text-[#127cf5] font-bold py-5'>~~~ Our All Product ~~~</h3>
                     <hr className='border-b-4 border-dashed w-1/6 mx-auto' />
-                    <h1 className='lg:text-6xl text-3xl font-bold'>chose now What you want.</h1>
+                    <h1 className='lg:text-6xl text-3xl font-bold '>chose now What you want.</h1>
                     <hr className='border-b-4 border-dashed w-2/6 mx-auto' />
                 </div>
                 <div className="">
