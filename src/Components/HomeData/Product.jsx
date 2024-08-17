@@ -124,19 +124,13 @@ const Product = () => {
                                 id=''
                                 className='border p-3 rounded-md w-full lg:w-80 font-bold mx-auto gap-2 shadow-xl'>
                                 <option value="">Brand Name</option>
-                                <option value="apple">Apple</option>
-                                <option value="hp">HP</option>
-                                <option value="asus">Asus</option>
-                                <option value="lenovo">Lenovo</option>
-                                <option value="oppo">Oppo</option>
-                                <option value="vivo">vivo</option>
-                                <option value="samsung">Samsung</option>
-                                <option value="acer">Acer</option>
-                                <option value="huawei">Huawei</option>
-                                <option value="google">Google</option>
-                                <option value="microsoft">Microsoft</option>
-                                <option value="sony">Sony</option>
-                                <option value="dell">Dell</option>
+                                <option value="TimeElegance">TimeElegance</option>
+                                <option value="MysteryReads">MysteryReads</option>
+                                <option value="CoolBreeze">CoolBreeze</option>
+                                <option value="UrbanStyle">UrbanStyle</option>
+                                <option value="FitWalk">FitWalk</option>
+                                <option value="InspireReads">InspireReads</option>
+
                             </select>
                         </div>
                         <div>
@@ -155,8 +149,8 @@ const Product = () => {
                                 id=''
                                 className='border p-3 rounded-md w-full lg:w-80 font-bold gap-2 shadow-xl'>
                                 <option value="">Price Range</option>
-                                <option value="low">Low price</option>
-                                <option value="high">High price</option>
+                                <option value="Low">Low price</option>
+                                <option value="High">High price</option>
                             </select>
                         </div>
                     </div>
