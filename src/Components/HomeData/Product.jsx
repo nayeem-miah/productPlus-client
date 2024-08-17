@@ -154,7 +154,7 @@ const Product = () => {
                             </select>
                         </div>
                     </div>
-                    <div className=" grid md:grid-cols-3 gap-8">
+                    <div className=" grid md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {
                             products.map(product => <div key={product._id} className="card bg-base-100 w-full rounded-none shadow-xl border">
                                 <figure>
@@ -180,7 +180,7 @@ const Product = () => {
                         }
                     </div>
                     <div className='text-center mt-8 gap-5'>
-                        {/* <p>Current page: {currentPage}</p> */}
+                       
                         <button className=" btn bg-[#ff1111]" onClick={handlePrevPage}>Prev</button>
                         {
                             pages.map(page => <button
