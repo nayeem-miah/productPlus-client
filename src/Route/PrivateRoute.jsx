@@ -1,6 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 import useAuth from '../Hooks/useAuth';
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 
 const PrivateRoute = ({ children }) => {
@@ -8,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation()
 
     if (loading) {
-        return <div className=" container mx-auto"><span className="loading loading-bars loading-lg text-[#ff1111]"></span></div>
+        return <LoadingSpinner></LoadingSpinner>
     }
 
     if (user) {
