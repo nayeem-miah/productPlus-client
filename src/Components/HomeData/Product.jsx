@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../LoadingSpinner";
-
 import ProductCard from "./ProductCard";
 
 const Product = () => {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [itemsPerPage, setItemsPerPage] = useState(50);
     const [totalProducts, setTotalProducts] = useState(0);
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
     const [range, setRange] = useState('');
     const [loading, setLoading] = useState(true);
-
+    const [asc, setAsc] = useState(true);
 
 
     const numberOfPages = Math.ceil(totalProducts / itemsPerPage);
@@ -33,8 +32,8 @@ const Product = () => {
 
 
     useEffect(() => {
-        fetchProducts(`https://product-plus-server.vercel.app/productRange?range=${range}`);
-    }, [range]);
+        fetchProducts(`https://product-plus-server.vercel.app/productRange?sort=${asc ? "asc" : "dsc"}`);
+    }, [asc]);
 
     useEffect(() => {
         fetchProducts(`https://product-plus-server.vercel.app/productBrand?brand=${brand}`);
@@ -120,11 +119,17 @@ const Product = () => {
                         <option value="Electronics">Electronics</option>
                     </select>
 
-                    <select onChange={handleChange(setRange)} className="border p-3 rounded-md w-full lg:w-80 font-bold gap-2 shadow-xl">
+                    {/* <select onChange={handleChange(setRange)} className="border p-3 rounded-md w-full lg:w-80 font-bold gap-2 shadow-xl">
                         <option value="">Price Range</option>
                         <option value="Low">Low Price</option>
                         <option value="High">High Price</option>
-                    </select>
+                    </select> */}
+                    <button
+                        onClick={() => setAsc(!asc)} className="btn bg-green-400">
+                        {
+                            asc ? "<<< price hight to low <<<" : `>>> price low to high >>>`
+                        }
+                    </button>
                 </div>
 
                 <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -145,7 +150,6 @@ const Product = () => {
                         </button>
                     ))}
                     <button className="btn bg-[#59f30c]" onClick={handleNextPage}>Next</button>
-
                     <select value={itemsPerPage} onChange={handleItemsPerPage} className="rounded-none ml-2 btn btn-sm border-none">
                         <option value="5">5</option>
                         <option value="10">10</option>
