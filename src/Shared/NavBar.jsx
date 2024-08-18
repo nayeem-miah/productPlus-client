@@ -2,20 +2,34 @@ import image from '../assets/icon.jpg'
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import { FaHome } from "react-icons/fa";
-import { MdAddIcCall } from "react-icons/md";
+import { FaHome, FaProductHunt } from "react-icons/fa";
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext)
+
+    // notification
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/addProduct/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setUsers(data);
+            });
+    }, [user]);
 
     const links = <>
         {
             user && <>
                 <li><NavLink to='/home' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#ff1111]' : 'font-family'}><FaHome /> Home</NavLink></li>
-                <li><NavLink to='/allCard' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#ff1111]' : 'font-family'}><MdAddIcCall />Contact</NavLink></li>
+                <li><NavLink to='/myProduct' className={({ isActive }) => isActive ? ' font-bold border-b-4 p-2 border-[#ff1111]' : 'font-family'}>
+                    <FaProductHunt />My Added Product({users?.length})</NavLink></li>
             </>
         }
     </>
+
+
+
 
 
 
@@ -47,11 +61,11 @@ const NavBar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100  z-[1] mt-3 w-52 p-2 ">
                             {links}
                         </ul>
                     </div>
-                    <img className="w-16" src={image} alt="" />
+                    <img className="w-14" src={image} alt="" />
                 </div>
                 <div className="navbar-end gap-2">
                     <div className="navbar-center hidden lg:flex">
