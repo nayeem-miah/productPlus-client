@@ -3,11 +3,12 @@ import Root from "../Layout/Root";
 
 // import AllCard from "../Pages/All card/AllCard";
 import Register from "../Auth/Register";
-import LogIn from "../Auth/Login";
+
 import Home from "../Pages/Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import MyAddedProduct from "../Components/HomeData/MyAddedProduct";
 import ErrorPages from "./ErrorPage";
+import LogIn from "../Auth/LogIn";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
 
             {
                 path: "/home",
-                element: <PrivateRoute><Home /></PrivateRoute>,
+                element: <Home />,
             },
             {
                 path: '/myProduct',

@@ -42,9 +42,9 @@ const Register = () => {
                 console.log(result.user)
                 updateUserProfile(name, photo)
                     .then(() => {
+                        navigate(location?.state ? location.state : '/home')
                         e.target.reset()
                         toast.success('Successfully create user!')
-                        navigate('/home')
                     })
             })
             .catch(error => {

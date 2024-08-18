@@ -22,9 +22,10 @@ const LogIn = () => {
         setError('')
         signIn(email, password)
             .then(() => {
+                navigate(location?.state ? location.state : '/home')
                 toast.success('LogIn Successful!')
                 e.target.reset()
-                navigate(location?.state ? location.state : '/home')
+               
             })
             .catch(error => {
                 setError('invalid-credential')
