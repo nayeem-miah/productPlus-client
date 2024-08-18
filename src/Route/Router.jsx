@@ -7,11 +7,13 @@ import LogIn from "../Auth/Login";
 import Home from "../Pages/Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import MyAddedProduct from "../Components/HomeData/MyAddedProduct";
+import ErrorPages from "./ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
+        errorElement: <ErrorPages></ErrorPages>,
         children: [
             {
                 index: true,
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: '/myProduct',
                 element: <PrivateRoute><MyAddedProduct></MyAddedProduct></PrivateRoute>,
-                
+
             },
             {
                 path: "/register",

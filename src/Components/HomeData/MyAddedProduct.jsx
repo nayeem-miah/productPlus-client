@@ -13,7 +13,7 @@ const MyAddedProduct = () => {
     const totalPrice = users.reduce((total, item) => total + item.price, 0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addProduct/${user?.email}`)
+        fetch(`https://product-plus-server.vercel.app/addProduct/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -23,7 +23,7 @@ const MyAddedProduct = () => {
 
     const handleDelete = id => {
         //   // are you sure
-        fetch(`http://localhost:5000/deleteProduct/${id}`, {
+        fetch(`https://product-plus-server.vercel.app/deleteProduct/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())

@@ -10,7 +10,7 @@ const NavBar = () => {
     // notification
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/addProduct/${user?.email}`)
+        fetch(`https://product-plus-server.vercel.app/addProduct/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
         const newData = {
             user, name, description, category, price, ratings, image
         }
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://product-plus-server.vercel.app/addProduct', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(newData),

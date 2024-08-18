@@ -33,29 +33,29 @@ const Product = () => {
 
 
     useEffect(() => {
-        fetchProducts(`http://localhost:5000/productRange?range=${range}`);
+        fetchProducts(`https://product-plus-server.vercel.app/productRange?range=${range}`);
     }, [range]);
 
     useEffect(() => {
-        fetchProducts(`http://localhost:5000/productBrand?brand=${brand}`);
+        fetchProducts(`https://product-plus-server.vercel.app/productBrand?brand=${brand}`);
     }, [brand]);
 
     useEffect(() => {
-        fetchProducts(`http://localhost:5000/productCategory?category=${category}`);
+        fetchProducts(`https://product-plus-server.vercel.app/productCategory?category=${category}`);
     }, [category]);
 
     useEffect(() => {
-        fetchProducts(`http://localhost:5000/productFind?name=${search}`);
+        fetchProducts(`https://product-plus-server.vercel.app/productFind?name=${search}`);
     }, [search]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/productsCount')
+        fetch('https://product-plus-server.vercel.app/productsCount')
             .then(res => res.json())
             .then(data => setTotalProducts(data.count));
     }, []);
 
     useEffect(() => {
-        fetchProducts(`http://localhost:5000/products?page=${currentPage}&size=${itemsPerPage}`);
+        fetchProducts(`https://product-plus-server.vercel.app/products?page=${currentPage}&size=${itemsPerPage}`);
     }, [currentPage, itemsPerPage]);
 
     const handleSearch = (e) => {
