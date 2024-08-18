@@ -83,11 +83,11 @@ const LogIn = () => {
                                 error && <small className="text-red-800">{error}</small>
                             }
                             <div className="form-control mt-6">
-                                <button className="btn font-bold bg-[#d10000]">Login</button>
+                                <button className="btn font-bold bg-[#59f30c]">Login</button>
                             </div>
                         </form>
                         <div className="text-center p-3">
-                            <p className="font-bold">Don’t have an account? <Link to='/register'><u className="font-bold text-[#fa3838]">Create an account</u></Link></p>
+                            <p className="font-bold">Don’t have an account? <Link to='/register'><u className="font-bold text-[#0a36e7]">Create an account</u></Link></p>
                         </div>
                         <div className="space-y-2 p-3">
                             <div className="divider">Or</div>

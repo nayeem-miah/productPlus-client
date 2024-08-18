@@ -85,7 +85,7 @@ const NavBar = () => {
                                 <button onClick={handleLogOut} className="font-bold border-b-4 border-[#FF3811] p-2 rounded-xl">Log Out</button>
                             </ul>
                         </div> :
-                            <Link to="/" className="btn btn-sm bg-[#ff1111] font-bold border-none">LogIn</Link>
+                            <Link to="/" className="btn btn-sm bg-[#59f30c] font-bold border-none">LogIn</Link>
                     }
 
                 </div>

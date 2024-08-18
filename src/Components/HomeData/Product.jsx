@@ -96,7 +96,7 @@ const Product = () => {
                     <form onSubmit={handleSearch} className="mb-5">
                         <label className="input input-bordered flex items-center gap-2 max-w-sm mx-auto">
                             <input type="text" name="search" className="grow" placeholder="Search for a product" />
-                            <button type="submit" className="btn btn-sm bg-[#FF3811]">Search</button>
+                            <button type="submit" className="btn btn-sm bg-[#59f30c]">Search</button>
                         </label>
                     </form>
                 </div>
@@ -134,7 +134,7 @@ const Product = () => {
                 </div>
 
                 <div className="text-center mt-8 gap-5">
-                    <button className="btn bg-[#ff1111]" onClick={handlePrevPage}>Prev</button>
+                    <button className="btn bg-[#59f30c]" onClick={handlePrevPage}>Prev</button>
                     {pages.map(page => (
                         <button
                             className={`btn ${currentPage === page ? 'selected' : ''}`}
@@ -144,7 +144,7 @@ const Product = () => {
                             {page + 1}
                         </button>
                     ))}
-                    <button className="btn bg-[#ff1111]" onClick={handleNextPage}>Next</button>
+                    <button className="btn bg-[#59f30c]" onClick={handleNextPage}>Next</button>
 
                     <select value={itemsPerPage} onChange={handleItemsPerPage} className="rounded-none ml-2 btn btn-sm border-none">
                         <option value="5">5</option>

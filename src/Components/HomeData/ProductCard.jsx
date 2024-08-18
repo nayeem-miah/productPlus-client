@@ -31,8 +31,8 @@ const ProductCard = ({ product }) => {
             </figure>
             <div className="card-body">
                 <div className="flex justify-between gap-3">
-                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-red-200"><span className="font-bold">Rating:</span> {product.ratings}</p>
-                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-red-200"><span className="font-bold">Price:</span> {product.price}</p>
+                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-green-200"><span className="font-bold">Rating:</span> {product.ratings}</p>
+                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-green-200"><span className="font-bold">Price:</span> {product.price}</p>
                 </div>
                 <hr />
                 <h2 className="text-2xl font-bold">{product.name}</h2>
@@ -40,7 +40,7 @@ const ProductCard = ({ product }) => {
                 <p><span className="font-bold">Category Name: </span>{product.category}</p>
                 <p><span className="font-bold">Date: </span>{product.createdAt}</p>
                 <div className="card-actions">
-                    <button onClick={handleAddToCart} className="btn btn-sm bg-[#ff1111] w-full">Add to cart</button>
+                    <button onClick={handleAddToCart} className="btn btn-sm bg-[#59f30c] w-full">Add to cart</button>
                 </div>
             </div>
         </div>
