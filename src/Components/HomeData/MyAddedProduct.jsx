@@ -31,22 +31,14 @@ const MyAddedProduct = () => {
                 //   console.log(data, id);
                 if (data.deletedCount > 0) {
                     Swal.fire({
-                        title: "Are you sure?",
-                        text: "this form is deleted",
+                        title: "delete successfully",
+                        text: "this data is deleted",
                         icon: "warning",
-                        showCancelButton: true,
+                        // showCancelButton: true,
                         confirmButtonColor: "#3085d6",
                         cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!",
-                    }).then(result => {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success",
-                            });
-                        }
-                    });
+
+                    }).then(result => { });
                     const remaining = users.filter(info => info._id !== id);
                     setUsers(remaining);
                 }

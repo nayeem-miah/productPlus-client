@@ -18,28 +18,31 @@ const LogIn = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
-
         setError('')
         signIn(email, password)
             .then(() => {
-                navigate(location?.state ? location.state : '/home')
+                navigate(location?.state ? location.state : '/')
                 toast.success('LogIn Successful!')
                 e.target.reset()
-               
+
             })
             .catch(error => {
                 setError('invalid-credential')
                 console.error(error)
             })
     }
-    const handleGoogle = () => {
-        googleLogIn()
-            .then(() => {
-                navigate(location?.state ? location.state : '/home')
-            })
-            .catch(error => {
-                console.error(error)
-            })
+
+
+    const handleGoogle = async () => {
+        try {
+            await googleLogIn()
+            navigate('/home');
+            toast.success('signUp successfully')
+        }
+        catch (err) {
+            console.log(err);
+            toast.error(err.message)
+        }
     }
 
     return (

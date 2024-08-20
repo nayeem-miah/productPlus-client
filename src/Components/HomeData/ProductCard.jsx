@@ -2,12 +2,14 @@ import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
 const ProductCard = ({ product }) => {
-    const { name, description, category, price, ratings, image } = product;
+    const { name, description, category, price, ratings, image, brand } = product;
     const { user } = useAuth();
     const email = user?.email;
+
     // console.log(email);
 
     const handleAddToCart = () => {
+
         const newData = {
             user, name, description, category, price, ratings, image
         }
@@ -32,12 +34,13 @@ const ProductCard = ({ product }) => {
             <div className="card-body">
                 <div className="flex justify-between gap-3">
                     <p className="border-2 border-[#ff1111] rounded-xl text-center bg-green-200"><span className="font-bold">Rating:</span> {product.ratings}</p>
-                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-green-200"><span className="font-bold">Price:</span> {product.price}</p>
+                    <p className="border-2 border-[#ff1111] rounded-xl text-center bg-green-200"><span className="font-bold">Price:</span> {product.price}$</p>
                 </div>
                 <hr />
                 <h2 className="text-2xl font-bold">{product.name}</h2>
                 <p><span className="font-bold">Description: </span>{product.description}</p>
                 <p><span className="font-bold">Category Name: </span>{product.category}</p>
+                <p><span className="font-bold">Brand Name: </span>{product.brand}</p>
                 <p><span className="font-bold">Date: </span>{product.createdAt}</p>
                 <div className="card-actions">
                     <button onClick={handleAddToCart} className="btn btn-sm bg-[#59f30c] w-full">Add to cart</button>

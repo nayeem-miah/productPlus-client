@@ -33,7 +33,7 @@ const ErrorPages = () => {
                 </h1>
 
                 <p className="mt-4 text-red-500 text-2xl">We can not find that page.</p>
-                <Link to={"/home"}>
+                <Link to={"/"}>
                     <button className=" link  text-red-500 text-6xl">Go Back</button>
                 </Link>
             </div>

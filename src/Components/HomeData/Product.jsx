@@ -10,7 +10,7 @@ const Product = () => {
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
-    const [range, setRange] = useState('');
+
     const [loading, setLoading] = useState(true);
     const [asc, setAsc] = useState(true);
 
@@ -29,8 +29,6 @@ const Product = () => {
             .catch(() => setLoading(false));
     };
 
-
-
     useEffect(() => {
         fetchProducts(`https://product-plus-server.vercel.app/productRange?sort=${asc ? "asc" : "dsc"}`);
     }, [asc]);
@@ -46,6 +44,7 @@ const Product = () => {
     useEffect(() => {
         fetchProducts(`https://product-plus-server.vercel.app/productFind?name=${search}`);
     }, [search]);
+
 
     useEffect(() => {
         fetch('https://product-plus-server.vercel.app/productsCount')
@@ -81,6 +80,7 @@ const Product = () => {
     };
 
     if (loading) return <LoadingSpinner />;
+
     return (
         <div className="container mx-auto mt-20">
             <section>
@@ -118,21 +118,15 @@ const Product = () => {
                         <option value="Home Appliances">Home Appliances</option>
                         <option value="Electronics">Electronics</option>
                     </select>
-
-                    {/* <select onChange={handleChange(setRange)} className="border p-3 rounded-md w-full lg:w-80 font-bold gap-2 shadow-xl">
-                        <option value="">Price Range</option>
-                        <option value="Low">Low Price</option>
-                        <option value="High">High Price</option>
-                    </select> */}
                     <button
                         onClick={() => setAsc(!asc)} className="btn bg-green-400">
                         {
-                            asc ? "<<< price hight to low <<<" : `>>> price low to high >>>`
+                            asc ? "<<< price high to low <<<" : `>>> price low to high >>>`
                         }
                     </button>
                 </div>
 
-                <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map(product => (
                         <ProductCard key={product._id} product={product}></ProductCard>
                     ))}
