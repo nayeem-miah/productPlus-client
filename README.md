@@ -1,6 +1,6 @@
 # productPlus
 
--  live link: [https://productplus-1.web.app](https://productplus-1.web.app)
+-  live link: [https://66c4d17d3a2f752268df2cba--effulgent-longma-8257c9.netlify.app/](https://66c4d17d3a2f752268df2cba--effulgent-longma-8257c9.netlify.app/)
 - server code : [https://github.com/nayeem-miah/productPlus-server](https://github.com/nayeem-miah/productPlus-server)
 
 
