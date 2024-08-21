@@ -9,7 +9,7 @@ const AllCard = () => {
         const email = e.target.email.value;
         const message = e.target.message.value;
         const data = { name, number, email, message }
-        console.log(data);
+        // console.log(data);
         e.target.reset()
         toast.success('Thank you sir')
     }
