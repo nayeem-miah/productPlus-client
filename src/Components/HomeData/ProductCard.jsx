@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    console.log(data);
+                    // console.log(data);
                     toast.success("Your data added  successfully");
                 }
             });

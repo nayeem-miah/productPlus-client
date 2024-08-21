@@ -17,7 +17,7 @@ const LogIn = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+        // console.log(email, password);
         setError('')
         signIn(email, password)
             .then(() => {
@@ -40,7 +40,7 @@ const LogIn = () => {
             toast.success('signUp successfully')
         }
         catch (err) {
-            console.log(err);
+            // console.log(err);
             toast.error(err.message)
         }
     }
